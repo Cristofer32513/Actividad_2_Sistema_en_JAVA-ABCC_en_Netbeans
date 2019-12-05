@@ -82,9 +82,19 @@ public class Registro extends javax.swing.JFrame {
 
         passwordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         passwordField1.setNextFocusableComponent(passwordField2);
+        passwordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordField1KeyPressed(evt);
+            }
+        });
 
         passwordField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         passwordField2.setNextFocusableComponent(btnRegistrar);
+        passwordField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordField2KeyPressed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 51));
 
@@ -160,8 +170,7 @@ public class Registro extends javax.swing.JFrame {
 
     private void CajaUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CajaUsuarioKeyPressed
         if(evt.getKeyCode() == 10)
-        btnRegistrar.doClick();
-
+            btnRegistrar.doClick();
     }//GEN-LAST:event_CajaUsuarioKeyPressed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
@@ -195,6 +204,16 @@ public class Registro extends javax.swing.JFrame {
         Login_Usuario log = new Login_Usuario();
         log.setVisible(true);
     }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void passwordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordField1KeyPressed
+        if(evt.getKeyCode() == 10)
+            btnRegistrar.doClick();
+    }//GEN-LAST:event_passwordField1KeyPressed
+
+    private void passwordField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordField2KeyPressed
+        if(evt.getKeyCode() == 10)
+            btnRegistrar.doClick();
+    }//GEN-LAST:event_passwordField2KeyPressed
 
     public boolean verificarEstadoComponentes(){
         boolean bandera=true;
